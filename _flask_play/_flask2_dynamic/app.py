@@ -1,3 +1,7 @@
+
+
+
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -10,7 +14,7 @@ def home():
 @app.route("/greet/")
 @app.route("/greet/<a_name>")
 def greet(a_name="anonymous"):
-    return f"<h1> Hello: greetings from {a_name} <h1>" 
+    return render_template("home.html", name=a_name) 
 
 
 @app.route("/digitSum/<int:a_num>")                      
