@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Casita Sedona</title>
+  <meta charset="utf-8">
+  <link href="/static/css/casita.css" rel="stylesheet">
+</head>
+<body>
+  <div id="wrapper">
+    <header>
+      <h1>Casita Sedona</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/canyon">Canyon Room</a></li>
+        <li><a href="/javelina">Javelina Room</a></li>
+        <li><a href="/weekend">Weekend Events</a></li>
+        <li><a href="/festival">Festivals</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      {# (Jinja comment) The block below will be replaced by each of the pages #}
+      {% block main %}
+      {% endblock %}
+    </main>
+    <footer>
+      Copyright &copy; 2023 Your Name Here
+    </footer>
+  </div>
+</body>
+</html>

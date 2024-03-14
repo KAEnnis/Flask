@@ -1,0 +1,7 @@
+Gunicorn
+beautifulsoup4==4.12.3
+elevenlabs==0.2.27
+Flask==3.0.2
+markdown2==2.4.12
+trafilatura==1.7.0
+Werkzeug==3.0.1
