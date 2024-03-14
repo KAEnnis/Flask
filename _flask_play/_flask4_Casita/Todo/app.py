@@ -18,13 +18,14 @@ from flask import Flask, render_template, request, redirect, url_for
 """
 JUST FOR EXAMPLE: Imagine using below libraries (not but just imagine)
 """
-from werkzeug.security import generate_password_hash, check_password_hash
-import shelve
-import trafilatura
-from bs4 import BeautifulSoup
-import markdown2
-from elevenlabs import generate
-import os
+## commented out as not actually needed and don't wan't in the venv.
+# from werkzeug.security import generate_password_hash, check_password_hash
+# import shelve
+# import trafilatura
+# from bs4 import BeautifulSoup
+# import markdown2
+# from elevenlabs import generate
+# import os
 """
 AND further imagine those imports would clash with my current PY install
 """
