@@ -1,27 +1,31 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, session
 
 app = Flask(__name__)
+app.secret_key = "some unique real key this just for test"
 
 @app.route("/")
 @app.route("/home")
 def home():
+    print(session)
+    a_name = session.get('name')  #no KeyError with get()
+    if a_name:
+        return render_template("home.html", name=a_name)
+    
     return render_template("home.html")
 
 @app.route("/greet/")
 @app.route("/greet/<a_name>")
 def greet(a_name="anonymous"):
-    return f"<h1> Hello: greetings from {a_name} <h1>" 
+    session['name'] = a_name         #add to the session dict
+    return redirect('/home') 
 
 
-@app.route("/digitSum/<int:a_num>")                      
-def digitSum(a_num):    
-    sum = 0
-    while (digit := a_num%10):
-        sum += digit
-        a_num = a_num//10
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")                      
 
-    return f"<h2> Sum or digits in URL num received is: {sum}<h2>"
 
 
 if __name__ == '__main__':
     app.run(debug=True, port=8080)
+    
