@@ -2,10 +2,13 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+
+@app.route('/', methods=['GET'])
 def index():
     if request.method == 'POST':
-        name = request.form.get('name', 'Guest')
+        print(request.form)
+        name = request.form.get('name', 'default-value')
+
         return f'Hello, {name}! This is a POST request.'
     else:
         return render_template('index.html', args=request.args)
