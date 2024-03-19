@@ -1,3 +1,8 @@
+# https://palletsprojects.com/
+# https://palletsprojects.com/p/flask/
+# https://palletsprojects.com/p/jinja/
+# https://flask.palletsprojects.com/en/3.0.x/installation/#virtual-environments
+
 from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
@@ -6,7 +11,7 @@ app = Flask(__name__)
 @app.route("/home")
 def home():
     #See server output for `app.py` use of url_for() to attempt to ref static file
-    print( url_for('static', filename='style.css') )
+    # print( url_for('static', filename='style.css') )
     return render_template("home.html")
 
 
