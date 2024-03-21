@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block links %}
+    <style>
+        .product-gallery{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+    {% for product in products%}
+    <div class="product-gallery">
+        <figure >
+            
+            <img    height="200px"
+                    src="{{product['image_url']}}" 
+                    alt="image of product">
+            <figcaption>€{{product['price']}}, {{product['description']}}</figcaption>
+        </figure>
+    </div>
+    {% endfor%}
+     
+
+{% endblock %}
+
+
